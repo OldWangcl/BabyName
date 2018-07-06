@@ -1,0 +1,18 @@
+<view class='bename'>
+  <view class='list'>
+    <view class='bename-title'>推荐名字</view>
+    <view bindtap='change' class='list-change'>
+      <view class='change' >
+        <image src='../../images/change.png'></image>
+      </view>
+      <text class='text'>换一换</text>
+    </view>
+  </view>
+
+  <view class='bename-list'>
+    <view wx:for='{{benameResult}}' wx:key='item' class='bename-item'>
+      {{item}}
+    </view>
+  </view>
+  <button class='btn-bename' bindtap='render'>重新起名</button>
+</view>

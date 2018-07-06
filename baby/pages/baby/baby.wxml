@@ -1,0 +1,80 @@
+<view class='containers'>
+  <view class='banner'>
+    <swiper autoplay='{{autoplay}}' circular='{{circular}}' indicator-dots='{{indictorDots}}' interval='{{interval}}'>
+      <block wx:for='{{swiperImgs}}' wx:key='{{item.id}}'>
+        <swiper-item>
+          <image src='{{item}}' mode='aspectFill'></image>
+        </swiper-item>  
+      </block>
+    </swiper>
+     <view class='baby-img'>
+      <image src='../../images/baby.png' mode='aspectFill'></image>
+    </view> 
+  </view>
+  <view class='step'>
+    <view class='step-item'>
+      <view class='step-title'>
+        <text class='number'>1</text>
+        <text class='name' style='color:{{color}}'>{{babyName}}</text>
+      </view>
+      <view class='input'>
+        <input data-name='surname' class='step-input' bindchange='change' placeholder='请输入姓氏' placeholder-style='font-size:28rpx;' value='' maxlength='2' bindblur='checkName' bindinput='cancelName'></input>
+      </view>
+    </view>
+    <view class='step-item'>
+      <view class='step-title'>
+        <text class='number'>2</text>
+        <text class='name'>{{babyGender}}</text>
+      </view>
+      <view>
+        <radio-group data-name='sex' bindchange='change' class='step-radio-group'>
+          <!--1  -->
+          <label class='step-radio-item'>
+            <radio class='step-radio-item_radio' value='1'></radio>
+            <view class="step-radio-item_simulate-radio {{sex === 1 ? 'active' : ''}}"></view>
+            <text>男</text>
+          </label>
+          <!-- 2 -->
+          <label class='step-radio-item'>
+            <radio class='step-radio-item_radio' value='2'></radio>
+            <view class="step-radio-item_simulate-radio {{sex === 2 ? 'active' : ''}}"></view>
+            <text>女</text>
+          </label>
+          <!--3  -->
+          <label class='step-radio-item step-radio-item-last'>
+            <radio class='step-radio-item_radio' value='3'></radio>
+            <view class="step-radio-item_simulate-radio {{sex === 3 ? 'active' : ''}}"></view>
+            <text>不限</text>
+          </label>
+        </radio-group>
+      </view>
+    </view>
+    <view class='step-item'>
+      <view class='step-title'>
+        <text class="number">3</text>
+        <text class="name" style='color:{{colors}}'>{{babyText}}</text>
+      </view>
+        <view class='input'>
+          <input value='' data-name='inname' bindchange='change' class='step-input' placeholder='请输入必须包含的字(选填)' placeholder-class='placeholder' maxlength='1' bindblur='checkText' bindinput='cancelText'></input>
+        </view> 
+    </view>
+    <view>
+      <radio-group data-name='innamePosition' bindchange='change' class='step-radio-group'>
+      <!-- 1 -->
+        <label class='step-radio-item'>
+          <radio class='step-radio-item_radio' value='1'></radio>
+          <view class="step-radio-item_simulate-radio {{innamePosition === 1 ? 'active' : ''}}"></view>
+          <text>在中间</text>
+        </label>
+        <!-- 2 -->
+        <label class='step-radio-item'>
+          <radio class='step-radio-item_radio' value='2'></radio>
+          <view class="step-radio-item_simulate-radio {{innamePosition === 2 ? 'active' : ''}}"></view>
+          <text>在最后</text>
+        </label>
+      </radio-group>
+    </view>
+    <button class='btn-bename' bindtap='btnSubmit'>马上起名</button>
+  </view>
+
+</view>

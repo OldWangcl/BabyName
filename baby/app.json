@@ -1,0 +1,12 @@
+{
+  "pages":[
+    "pages/baby/baby",
+    "pages/result/result"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#FFB6C1",
+    "navigationBarTitleText": "Baby Name",
+    "navigationBarTextStyle":"black"
+  }
+}
